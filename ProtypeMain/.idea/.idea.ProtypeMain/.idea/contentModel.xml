@@ -245,6 +245,9 @@
           <e p="PlayerMoving.cs" t="Include" />
           <e p="PlayerSkill.cs" t="Include" />
           <e p="PlayerTrigger.cs" t="Include" />
+          <e p="StartMenu" t="Include">
+            <e p="StartPanel.cs" t="Include" />
+          </e>
           <e p="SwordController.cs" t="Include" />
         </e>
       </e>

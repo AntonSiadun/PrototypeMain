@@ -61,9 +61,21 @@ namespace NewScripts
             
             if (GameRules.Enemy == null)
                 return;
-            transform.LookAt(GameRules.Enemy.transform);
+            
+            LookAtEnemy(GameRules.Enemy.transform);
         }
 
+        public void LookAtEnemy(Transform enemyTransform)
+        {
+            var position = enemyTransform.position;
+            position = new Vector3(position.x,0f,position.z);
+            
+            enemyTransform.position = position;
+            
+            transform.LookAt(enemyTransform);
+            
+        }
+        
         #region Skills
         
         public void SetCurrentSkill(PlayerSkill skill)
