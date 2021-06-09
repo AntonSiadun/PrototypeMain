@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
-  _currentSkill: {fileID: 0}
+  currentSkill: {fileID: 0}
   defendSkill: {fileID: 0}
   firstSkill: {fileID: 0}
   secondSkill: {fileID: 0}

@@ -9,7 +9,7 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
     public PlayerMoving playerMoving;
     private PlayerTrigger _playerTrigger;
     
-    public AttackSkill _currentSkill;
+    public AttackSkill currentSkill;
     public DefendSkill defendSkill;
     public AttackSkill firstSkill;
     public AttackSkill secondSkill;
@@ -36,7 +36,7 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
         firstSkill.Setup(this);
         secondSkill = gameObject.AddComponent<PlayerSlash>();
         secondSkill.Setup(this);
-        _currentSkill = null;
+        currentSkill = null;
         defendSkill = gameObject.AddComponent<DefendSkill>();
         defendSkill.Setup(this);
 
@@ -51,7 +51,7 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
 
     private void FixedUpdate()
     {
-        //Contol only our Object
+        //Control only our Object
         if (!photonView.IsMine)
             return;
 
@@ -65,33 +65,41 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
             
         playerMoving.MoveCharacter(canMove);
         playerAnimator.PlayMoveAnimation(playerMoving.GetInput());
-            
-        if (GameRules.Enemy == null)
-            return;
-            
-        LookAtEnemy(GameRules.Enemy.transform);
+        
+        LookAtEnemy();
     }
 
-    private void LookAtEnemy(Transform enemyTransform)
+    private void LookAtEnemy()
     {
+        if (GameRules.Enemy == null)
+            return;
+        
+        var enemyTransform = GameRules.Enemy.transform;
         var position = enemyTransform.position;
+        
         position = new Vector3(position.x,0f,position.z);
-            
         enemyTransform.position = position;
             
         transform.LookAt(enemyTransform);
             
+    }
+    
+    public int GetDamage()
+    {
+        Debug.Log($"Damage:{currentSkill?.DealDamage()}");
+        return currentSkill == null ? 0 : currentSkill.DealDamage();
+    }
+        
+    public bool PlayerHasSomeBlock()
+    {
+        return !canMove || IsDead || isWin;
     }
         
     #region Skills
         
     public void SetCurrentSkill(AttackSkill skill)
     {
-        _currentSkill = skill;
-        if(_currentSkill == firstSkill)
-            Debug.Log("FirstSkill Was Activated");
-        if(_currentSkill == null)
-            Debug.Log("Current skill empty");
+        currentSkill = skill;
     }
         
     private void Roll()
@@ -108,6 +116,8 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
     {
         photonView.RPC("ActivateAttackSkill",RpcTarget.All,secondSkill.id.ToString());
     }
+    
+    #endregion
 
     #region RCP methods
 
@@ -135,21 +145,7 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
     }
         
     #endregion
-        
-    public int GetDamage()
-    {
-        Debug.Log($"Damage:{_currentSkill?.DealDamage()}");
-        return _currentSkill == null ? 0 : _currentSkill.DealDamage();
-    }
-        
-    public bool PlayerHasSomeBlock()
-    {
-        return !canMove || IsDead || isWin;
-    }
-        
-        
-    #endregion
-        
+
     #region Finite States
 
     public void Kill()
