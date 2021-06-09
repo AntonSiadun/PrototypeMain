@@ -1,92 +1,124 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using NewScripts;
+using UnityEngine;
 
-namespace NewScripts
+public abstract class PlayerSkill : MonoBehaviour
 {
-    public abstract class PlayerSkill 
+    public Player player;
+    public float duration;
+    public PlayerAnimator animator;
+    public int id;
+
+    public abstract void Activate();
+
+    public abstract void Animate();
+
+    public abstract void Move();
+}
+public interface IDealDamage
+{
+    int DealDamage();
+}
+
+public class BlockedSkill : PlayerSkill
+{
+    public void Setup(Player playerInstance)
     {
-        protected readonly Player Player;
-        public float Duration;
-        protected string Trigger;
-        protected readonly PlayerAnimator Animator;
-        public int ID;
-
-        protected PlayerSkill(Player player,float duration)
-        {
-            Player = player;
-            Duration = duration;
-            Animator = player._playerAnimator;
-        }
-
-        public abstract void Activate();
-
-        public abstract void Animate();
-
-        public abstract void Move();
+        player = playerInstance;
+        animator = player.playerAnimator;
+    }
         
+    public override void Activate()
+    {
+        if(player.PlayerHasSomeBlock())
+            return;
+            
+        Animate();
+        Move();
+
+        StartCoroutine(BlockMovingForTime(duration));
     }
 
-    public interface IDealDamage
-    {
-        int DealDamage();
-    }
+    public override void Animate(){}
 
-    public class PlayerSlash : PlayerSkill, IDealDamage
-    {
-        private readonly int _damage;
-
-        public PlayerSlash(Player player) : base(player, 1.85f)
-        {
-            _damage = 2;
-            ID = 1;
-        }
-
-        public override void Activate()
-        {
-            Player.SetCurrentSkill(this);
-            Animate();
-            Move();
-        }
+    public override void Move(){}
         
-        public override void Animate()
-        {
-            Animator.SlashAttack();
-        }
-        
-        public override void Move(){}
-
-        public int DealDamage()
-        {
-            return _damage;
-        }
+    protected IEnumerator BlockMovingForTime(float time)
+    {
+        player.canMove = false;
+        yield return new WaitForSeconds(time);
+        player.canMove = true;
     }
+}
     
-    public class PlayerDirect : PlayerSkill, IDealDamage
-    {
-        private readonly int _damage;
-
-        public PlayerDirect(Player player) : base(player, 2.33f)
-        {
-            _damage = 1;
-            ID = 2;
-        }
-
-        public override void Activate()
-        {
-            Player.SetCurrentSkill(this);
-            Animate();
-            Move();
-        }
-
-        public override void Animate()
-        {
-            Animator.DirectAttack();
-        }
+public class AttackSkill : BlockedSkill, IDealDamage
+{
+    protected int Damage;
         
-        public override void Move(){}
+    public override void Activate()
+    {
+        if(player.PlayerHasSomeBlock())
+            return;
+        
+        Animate();
+        Move();
 
-        public int DealDamage()
-        {
-            return _damage;
-        }
+        StartCoroutine(BlockMovingForTime(duration));
+        StartCoroutine(SetSkillForTime());
+    }
+    public override void Move(){}
+        
+    public int DealDamage()
+    {
+        return Damage;
+    }
+        
+    IEnumerator SetSkillForTime()
+    {
+        player.SetCurrentSkill(this);
+        yield return new WaitForSeconds(duration);
+        player.SetCurrentSkill(null);
+    }
+}
+    
+public class DefendSkill : BlockedSkill
+{
+    private void Awake()
+    {
+        duration = 2f;
+    }
+
+    public override void Animate()
+    {
+        animator.Roll(player.playerMoving.GetInput());
+    }
+}
+    
+//SubSkills
+public class PlayerSlash : AttackSkill
+{
+    private void Awake()
+    {
+        Damage = 2;
+        id = 1;
+        duration = 1.85f;
+    }
+    public override void Animate()
+    {
+        animator.SlashAttack();
+    }
+}
+public class PlayerDirect : AttackSkill
+{
+
+    private void Awake()
+    {
+        Damage = 1;
+        id = 2;
+        duration = 2.33f;
+    }
+    public override void Animate()
+    {
+        animator.DirectAttack();
     }
 }

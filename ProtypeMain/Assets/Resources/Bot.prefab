@@ -1527,7 +1527,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a6728d0ae0ccb4d870521bf66e6a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  _currentSkill: {fileID: 0}
+  defendSkill: {fileID: 0}
+  firstSkill: {fileID: 0}
+  secondSkill: {fileID: 0}
   canMove: 1
   isWin: 0
 --- !u!114 &-6855194099325007868
