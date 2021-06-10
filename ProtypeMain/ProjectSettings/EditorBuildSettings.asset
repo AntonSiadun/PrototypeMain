@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ChoseHero.unity
+    guid: d70e997d03498c442a7ac3c8806c1b74
+  - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 6c1db6992bbcfbc4fa6100ae9003fbbe
   - enabled: 1
