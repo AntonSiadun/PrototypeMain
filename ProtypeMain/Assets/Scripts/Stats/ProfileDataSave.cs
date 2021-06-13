@@ -1,40 +1,29 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
 
-public class ProfileDataSave : MonoBehaviour
+public class ProfileDataSave 
 {
-    private string _path;
-    public ProfileData _savedData { private set; get; }
-    
-    public bool isExist = false;
-    private void Awake()
+    private static string _path;
+
+    public ProfileDataSave()
     {
-        _savedData =new ProfileData();
-        
         #if UNITY_ANDROID && ! UNITY_EDITOR
             _path = Path.Combine(Application.persistentDataPath,"Save.json");
         #else
             _path = Path.Combine(Application.dataPath, "Save.json");
         #endif
-
-        if (File.Exists(_path))
-        {
-            _savedData = Read();
-            isExist = true;
-        }
-        
-        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void Save()
+    public static bool FileExist() => File.Exists(_path);
+
+    public static void Save(Profile profile)
     {
-        File.WriteAllText(_path,JsonUtility.ToJson(_savedData));
+        File.WriteAllText(_path,JsonUtility.ToJson(profile.saveData));
     }
 
-    public ProfileData Read()
+    public static SaveData Read()
     {
-        return JsonUtility.FromJson<ProfileData>(File.ReadAllText(_path));
+        return JsonUtility.FromJson<SaveData>(File.ReadAllText(_path));
     }
 
 }

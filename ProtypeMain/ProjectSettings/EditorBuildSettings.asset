@@ -6,15 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ChoseHero.unity
+    path: Assets/Scenes/ChoiceHero.unity
     guid: d70e997d03498c442a7ac3c8806c1b74
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 6c1db6992bbcfbc4fa6100ae9003fbbe
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/PrepareDuel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 1dcaefd34e9470b4aa408b03afa352e7
+  - enabled: 1
+    path: Assets/Scenes/Hunt/HuntMainMenu.unity
+    guid: 52f32aa0c726bf243a64d84c328e446f
+  - enabled: 1
+    path: Assets/Scenes/Hunt/HuntLocation1.unity
+    guid: fa3fa61b480a0da44bb99dd4fbee7663
+  - enabled: 1
+    path: Assets/Scenes/Hunt/HuntLocation2.unity
+    guid: 527fe38bb0f558d4a861d0c7c3b1b56d
+  - enabled: 1
+    path: Assets/Scenes/Hunt/HuntLocation3.unity
+    guid: 4ebfda1352f1ac44f9906560bb1ff649
   m_configObjects: {}

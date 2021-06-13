@@ -240,6 +240,10 @@
           </e>
           <e p="GameRules.cs" t="Include" />
           <e p="GameSceneManager.cs" t="Include" />
+          <e p="HuntMenu" t="Include">
+            <e p="GameModeData.cs" t="Include" />
+            <e p="HuntMainMenu.cs" t="Include" />
+          </e>
           <e p="LobbyManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerAnimator.cs" t="Include" />
@@ -248,12 +252,12 @@
           <e p="PlayerMoving.cs" t="Include" />
           <e p="PlayerSkill.cs" t="Include" />
           <e p="PlayerTrigger.cs" t="Include" />
-          <e p="ProfileData.cs" t="Include" />
+          <e p="Profile.cs" t="Include" />
+          <e p="ProfileStructures.cs" t="Include" />
           <e p="StartMenu" t="Include">
             <e p="StartPanel.cs" t="Include" />
           </e>
           <e p="Stats" t="Include">
-            <e p="HeroStats.cs" t="Include" />
             <e p="ProfileDataSave.cs" t="Include" />
           </e>
           <e p="SwordController.cs" t="Include" />

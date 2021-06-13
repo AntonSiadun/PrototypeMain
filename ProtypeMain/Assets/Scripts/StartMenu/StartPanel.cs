@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartPanel : MonoBehaviour
 {
-    public void GoToMainMenu()
+    public void NextScene(int numberScene)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(numberScene);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
