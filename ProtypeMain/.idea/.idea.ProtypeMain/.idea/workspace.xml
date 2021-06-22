@@ -2,20 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ded0628-dbf8-47f3-991f-4d373e0fa008" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ProfileOperations/Profile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ProfileOperations/ProfileStructures.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StartMenu/SceneMovementController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProtypeMain/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProtypeMain/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProtypeMain/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProtypeMain/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProtypeMain/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProtypeMain/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Attack/JumpAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Attack/JumpAttack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Attack/SlashAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Attack/SlashAttack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Movement/Roll.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Movement/Roll.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/XbotAnimController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/XbotAnimController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Save.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChoseHero.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChoiceHero.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChoiceHero.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChoiceMenu/ChoiceMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChoiceMenu/ChoiceMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProfileData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Profile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartMenu/StartPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartMenu/StartPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/HeroStats.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/ProfileDataSave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/ProfileDataSave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PrepareDuel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PrepareDuel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChoiceMenu/ChoiceMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRules.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HuntMenu/GameModeData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HuntMenu/HuntMainMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCharacterStatusSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCharacterStatusSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMoving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerMoving.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMoving.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Profile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProfileStructures.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartMenu/StartPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/ProfileDataSave.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwordController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SwordController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,43 +57,103 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HuntMenu/GameModeData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/ProfileDataSave.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCharacterStatusSelector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Profile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChoiceMenu/ChoiceMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMoving.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HuntMenu/HuntMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Actions/Movement/Direct/RotateTowards.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Decorators/Repeater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Conditions/GameObject/CheckDistanceToGameObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProfileOperations/Profile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HeroSelectionMenu/HeroSelector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SwordControllerSingle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/CanvasCore/Framework/Runtime/Tasks/ActionList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerAnimator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameRulesSingle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StartMenu/StartPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Decorators/ConditionalEvaluator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Actions/Animator/MecanimPlayAnimation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StartMenu/SceneMovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/ChoiceHero.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Actions/Utility/Wait.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Actions/Blackboard/SetInt.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProfileOperations/ProfileStructures.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SwordColliderSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerTriggerSingle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LookAtMobs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Actions/Blackboard/SetBoolean.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Composites/BinarySelector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCharacterStatusSelector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MobSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerMoving.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneLoaderByNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SwordController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/StateMachines/Nodes/NestedBTState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Leafs/ConditionNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Leafs/ActionNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProfileSavePoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSingle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Bot.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameSceneSingle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameRules.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProfileStructures.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCharacterStatusSelector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameRules.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stats/HeroStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ChooseMenu/ChoseMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StartMenu/StartPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HuntMenu/HuntMainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ProfileData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stats/ProfileDataSave.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Profile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProfileOperations/ProfileDataSave.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ProfileStructures.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ChoiceMenu/ChoiceMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProfileOperations/ProfileStructures.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HuntMenu/GameModeData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HuntMenu/HuntMainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HuntMenu/SceneLoaderByNumber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StartMenu/StartPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProfileSavePoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMoving.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ChoiceMenu/ChoiceMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HeroSelectionMenu/HeroSelectionMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HeroSelectionMenu/HeroSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoaderByNumber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCharacterStatusSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StartMenu/SceneMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProfileOperations/Profile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HeroSelectionMenu/HeroSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HuntGameScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerHunt.cs" />
+        <option value="$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Decorators/Repeater.cs" />
+        <option value="$PROJECT_DIR$/Assets/ParadoxNotion/NodeCanvas/Tasks/Actions/Animator/MecanimPlayAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/MobSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/Mob.cs" />
+        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PrefabRegistrator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MobSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/LookAtMobs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameRules.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IPlayerBlocked.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SwordController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SwordColliderSwitcher.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameRulesSingle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SwordControllerSingle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameSceneSingle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LookAtMobs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerMoving.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerElements/PlayerAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerTriggerSingle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerSingle.cs" />
       </list>
     </option>
   </component>
@@ -126,6 +216,21 @@
       <workItem from="1623598781018" duration="25000" />
       <workItem from="1623600647796" duration="165000" />
       <workItem from="1623601080106" duration="14061000" />
+      <workItem from="1624084656819" duration="5560000" />
+      <workItem from="1624099335791" duration="4467000" />
+      <workItem from="1624107402962" duration="10869000" />
+      <workItem from="1624179586552" duration="49000" />
+      <workItem from="1624179990090" duration="8000" />
+      <workItem from="1624180775038" duration="690000" />
+      <workItem from="1624186777615" duration="3472000" />
+      <workItem from="1624193079484" duration="1539000" />
+      <workItem from="1624263969715" duration="569000" />
+      <workItem from="1624291997481" duration="139000" />
+      <workItem from="1624292220761" duration="2629000" />
+      <workItem from="1624341905105" duration="19596000" />
+      <workItem from="1624377031748" duration="9319000" />
+      <workItem from="1624389112497" duration="2004000" />
+      <workItem from="1624396081445" duration="4313000" />
     </task>
     <servers />
   </component>
@@ -164,5 +269,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623273759256" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1624372522405">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1624372522405" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1624108008447">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1624108008447" />
   </component>
 </project>

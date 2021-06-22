@@ -1,44 +1,39 @@
-﻿using NewScripts;
+﻿using System.Collections;
 using Photon.Pun;
 using UnityEngine;
+using PlayerElements;
 
 public class Player : MonoBehaviourPunCallbacks,IPunObservable
 {
-    private PlayerInput _playerInput;
-    public  PlayerAnimator playerAnimator;
-    public PlayerMoving playerMoving;
-    private PlayerTrigger _playerTrigger;
-    
+    protected  PlayerAnimator _playerAnimator;
+    protected PlayerMoving _playerMoving;
+    protected PlayerInput _playerInput;
+    protected bool _canMove;
+    protected bool _isWin;
+
+    [SerializeField] private Collider Sword;
+    public bool invincible;
     public AttackSkill currentSkill;
     public DefendSkill defendSkill;
     public AttackSkill firstSkill;
     public AttackSkill secondSkill;
-        
-    public bool canMove = true;
-    public bool isWin;
-    public bool IsDead { get; private set; }
 
-    private void Awake()
+    public bool IsDead;
+
+    public virtual void Awake()
     {
-        playerAnimator = GetComponent<PlayerAnimator>();
-            
+        _canMove = true;
+        invincible = false;
+        
+        _playerAnimator = GetComponent<PlayerAnimator>();
         _playerInput = GameObject.Find("InputConnect").GetComponent<PlayerInput>();
-            
-        _playerTrigger = GetComponent<PlayerTrigger>();
-        _playerTrigger.SetPlayer(this);
-            
-        playerMoving = new PlayerMoving(_playerInput.joystick,
+        _playerMoving = new PlayerMoving(_playerInput.joystick,
             GetComponent<CharacterController>());
-            
-            
-        //Skills initialization and setup
+        
         firstSkill = gameObject.AddComponent<PlayerDirect>();
-        firstSkill.Setup(this);
         secondSkill = gameObject.AddComponent<PlayerSlash>();
-        secondSkill.Setup(this);
-        currentSkill = null;
         defendSkill = gameObject.AddComponent<DefendSkill>();
-        defendSkill.Setup(this);
+        currentSkill = null;
 
         //Button Events dont need to control for enemy Object
         if (!photonView.IsMine)
@@ -59,16 +54,38 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
         {
             IsDead = true;
         }
-            
         if(PlayerHasSomeBlock())
             return;
             
-        playerMoving.MoveCharacter(canMove);
-        playerAnimator.PlayMoveAnimation(playerMoving.GetInput());
-        
+        _playerMoving.MoveCharacterIfCanMove(_canMove);
+        _playerAnimator.PlayMoveAnimationByInputVector(_playerMoving.GetInputVector());
         LookAtEnemy();
     }
+    
+    public IEnumerator BlockPlayerMovingForTime(float time)
+    {
+        _canMove = false;
+        yield return new WaitForSeconds(time);
+        _canMove = true;
+    }
+    
+    public IEnumerator SetPlayerSkillForTime(AttackSkill skill)
+    {
+        SetCurrentSkill(skill);
+        yield return new WaitForSeconds(skill.duration);
+        SetCurrentSkill(skill);
+    }
 
+    private bool IsFalling()
+    {
+        return transform.position.y < -2f;
+    }
+    
+    public bool PlayerHasSomeBlock()
+    {
+        return !_canMove || IsDead || _isWin;
+    }
+    
     private void LookAtEnemy()
     {
         if (GameRules.Enemy == null)
@@ -76,50 +93,46 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
         
         var enemyTransform = GameRules.Enemy.transform;
         var position = enemyTransform.position;
-        
-        position = new Vector3(position.x,0f,position.z);
+        position = new Vector3(position.x, 0f,position.z);
         enemyTransform.position = position;
             
         transform.LookAt(enemyTransform);
-            
+    }
+
+    public void LookAtInputDirection()
+    {
+        Vector3 positionOfPointInDirection = _playerMoving.GetInputVector() + transform.position;
+        transform.LookAt(positionOfPointInDirection);
     }
     
-    public int GetDamage()
+    public int GetCurrentAttackSkillDamage()
     {
-        Debug.Log($"Damage:{currentSkill?.DealDamage()}");
-        return currentSkill == null ? 0 : currentSkill.DealDamage();
+        Debug.Log($"Damage:{currentSkill?.GetDamage()}");
+        return currentSkill == null ? 0 : currentSkill.GetDamage();
     }
-        
-    public bool PlayerHasSomeBlock()
-    {
-        return !canMove || IsDead || isWin;
-    }
-        
+
     #region Skills
-        
-    public void SetCurrentSkill(AttackSkill skill)
+
+    private void SetCurrentSkill(AttackSkill skill)
     {
         currentSkill = skill;
     }
         
-    private void Roll()
+    protected void Roll()
     {
         defendSkill.Activate();
     }
 
     private void FirstAttack()
     {
-        photonView.RPC("ActivateAttackSkill",RpcTarget.All,firstSkill.id.ToString());
+        photonView.RPC("ActivateAttackSkill",RpcTarget.All, firstSkill.id.ToString());
     }
 
     private void SecondAttack()
     {
-        photonView.RPC("ActivateAttackSkill",RpcTarget.All,secondSkill.id.ToString());
+        photonView.RPC("ActivateAttackSkill", RpcTarget.All, secondSkill.id.ToString());
     }
-    
     #endregion
-
-    #region RCP methods
 
     [PunRPC]
     private void ActivateAttackSkill(string skillCode)
@@ -139,65 +152,81 @@ public class Player : MonoBehaviourPunCallbacks,IPunObservable
                 Debug.Log("Wrong skill code");
                 return;
         }
-        Debug.Log("Skill work!");
             
         skill.Activate();
     }
-        
-    #endregion
 
     #region Finite States
-
+    
     public void Kill()
     {
         IsDead = true;
-        playerMoving.TurnOffCharacterController();
-        playerAnimator.Die();
+        Sword.enabled = false;
+        _playerMoving.TurnOffCharacterController();
+        _playerAnimator.Die();
     }
         
     public void React()
     {
-        playerAnimator.React();
+        StopAllCoroutines();
+        Sword.enabled = false;
+        _playerAnimator.React();
     }
+    
+    
 
     [PunRPC]
     public void Win()
     {
-        isWin = true;
-        canMove = false;
-
-        playerAnimator.Win();
-    }
-
-    private bool IsFalling()
-    {
-        return transform.position.y < -2f;
-    }
+        _isWin = true;
+        _canMove = false;
         
+        _playerAnimator.Win();
+    }
     #endregion
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
         {
-            stream.SendNext(playerAnimator.sword.activeSelf);
+            stream.SendNext(Sword.enabled);
             stream.SendNext(IsDead);
-            stream.SendNext(canMove);
+            stream.SendNext(_canMove);
         }
         else
         {
             var isActive = (bool) stream.ReceiveNext();
             IsDead = (bool) stream.ReceiveNext();
-            canMove = (bool) stream.ReceiveNext();
+            _canMove = (bool) stream.ReceiveNext();
                 
                 
-            playerAnimator.sword.SetActive(isActive);
+            Sword.enabled=isActive;
         }
     }
 
     public override void OnLeftRoom()
     {
         Destroy(this);
+    }
+
+    public void DisableSword()
+    {
+        Sword.enabled = false;
+    }
+
+    public void EnableSword()
+    {
+        Sword.enabled = true;
+    }
+
+    public virtual void OnInvincible()
+    {
+        invincible = true;
+    }
+
+    public virtual void OffInvincible()
+    {
+        invincible = false;
     }
 
 }

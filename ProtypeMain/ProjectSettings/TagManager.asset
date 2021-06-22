@@ -8,6 +8,8 @@ TagManager:
   - Local
   - Enemy
   - Joystick
+  - Mob
+  - MobSword
   layers:
   - Default
   - TransparentFX

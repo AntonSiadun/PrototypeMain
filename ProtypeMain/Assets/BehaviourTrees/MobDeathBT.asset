@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: MobDeathBT
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":492.0,"y":204.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"method":{"_baseInfo":"LookAtMobs|RemoveObservabelMobFromList|System.Void","_paramsInfo":"UnityEngine.GameObject"},"parameters":[{"_type":"UnityEngine.GameObject","_name":"MyGameObject","_targetVariableID":"3c25dc31-2294-406c-9ffb-3425e549c34a"}],"returnValue":{},"overrideAgent":{"_type":"LookAtMobs","_name":"PlayerRotator","_targetVariableID":"ed1fdff4-eb8f-460a-b091-9c9cffbb7049"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":-39.60798,"y":369.2505},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"layerIndex":{},"stateName":{"_value":"Die"},"transitTime":0.0,"waitUntilFinish":true,"$type":"NodeCanvas.Tasks.Actions.MecanimPlayAnimation"},"_position":{"x":462.6581,"y":359.3114},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"immediately":true,"$type":"NodeCanvas.Tasks.Actions.DestroyGameObject"},"_position":{"x":628.4103,"y":367.3427},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.16
+    _category: 
+    _comments: 
+    _translation: {x: 200, y: -50}
+    _zoomFactor: 0.7360297
+  _haltSerialization: 0

@@ -1,53 +1,51 @@
 ﻿using System.Collections;
-using NewScripts;
+using PlayerElements;
 using UnityEngine;
 
-public abstract class PlayerSkill : MonoBehaviour
+public class PlayerSkill : MonoBehaviour
 {
-    public Player player;
-    public float duration;
-    public PlayerAnimator animator;
     public int id;
+    public string trigger;
+    public float duration;
 
-    public abstract void Activate();
+    protected Player Player;
+    protected PlayerAnimator Animator;
 
-    public abstract void Animate();
+    private void Awake()
+    {
+        Player = gameObject.GetComponent<Player>();
+        Animator = Player.GetComponent<PlayerAnimator>();
+    }
+    
+    public virtual void Activate(){}
 
-    public abstract void Move();
+    protected virtual void Animate()
+    {
+        Animator.PlayAnimationBySkill(this);
+    }
+
+    protected virtual void Move(){}
 }
+
 public interface IDealDamage
 {
-    int DealDamage();
+    int GetDamage();
 }
 
 public class BlockedSkill : PlayerSkill
-{
-    public void Setup(Player playerInstance)
-    {
-        player = playerInstance;
-        animator = player.playerAnimator;
-    }
-        
+{ 
+    
     public override void Activate()
     {
-        if(player.PlayerHasSomeBlock())
+        if(Player.PlayerHasSomeBlock())
             return;
-            
         Animate();
         Move();
-
-        StartCoroutine(BlockMovingForTime(duration));
+        StartCoroutine(Player.BlockPlayerMovingForTime(duration));
     }
-
-    public override void Animate(){}
-
-    public override void Move(){}
-        
-    protected IEnumerator BlockMovingForTime(float time)
+    protected override void Animate()
     {
-        player.canMove = false;
-        yield return new WaitForSeconds(time);
-        player.canMove = true;
+        Animator.PlayAnimationBySkill(this);
     }
 }
     
@@ -57,68 +55,56 @@ public class AttackSkill : BlockedSkill, IDealDamage
         
     public override void Activate()
     {
-        if(player.PlayerHasSomeBlock())
+        if(Player.PlayerHasSomeBlock())
             return;
         
         Animate();
         Move();
 
-        StartCoroutine(BlockMovingForTime(duration));
-        StartCoroutine(SetSkillForTime());
+        StartCoroutine(Player.BlockPlayerMovingForTime(duration));
+        StartCoroutine(Player.SetPlayerSkillForTime(this));
     }
-    public override void Move(){}
-        
-    public int DealDamage()
+    
+    public int GetDamage()
     {
         return Damage;
     }
-        
-    IEnumerator SetSkillForTime()
-    {
-        player.SetCurrentSkill(this);
-        yield return new WaitForSeconds(duration);
-        player.SetCurrentSkill(null);
-    }
-}
     
-public class DefendSkill : BlockedSkill
-{
-    private void Awake()
-    {
-        duration = 2f;
-    }
+}
 
-    public override void Animate()
-    {
-        animator.Roll(player.playerMoving.GetInput());
-    }
-}
-    
 //SubSkills
 public class PlayerSlash : AttackSkill
 {
-    private void Awake()
+    private void Start()
     {
+        trigger = "SlashAttack";
         Damage = 2;
         id = 1;
-        duration = 1.85f;
-    }
-    public override void Animate()
-    {
-        animator.SlashAttack();
+        duration = 1.68f;
     }
 }
+
 public class PlayerDirect : AttackSkill
 {
-
-    private void Awake()
+    private void Start()
     {
+        trigger = "DirectAttack";
         Damage = 1;
         id = 2;
-        duration = 2.33f;
+        duration = 1.807f;
     }
-    public override void Animate()
+}
+
+public class DefendSkill : BlockedSkill
+{
+    private void Start()
     {
-        animator.DirectAttack();
+        trigger = "Roll";
+        duration = 1.667f;
+    }
+
+    protected override void Move()
+    {
+        Player.LookAtInputDirection();
     }
 }
